@@ -13,7 +13,7 @@ function App() {
   return (
     <div className="App">
       <h1>wePLAY</h1>
-      <Map location={location} zoomLevel={11}/>
+      <Map />
     </div>
   );
 }
