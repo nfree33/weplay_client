@@ -7,17 +7,19 @@ import Navbar from './components/Navbar/Navbar'
 import SignUpForm from "./components/SignUpForm/SignUpForm";
 import LogInForm from "./components/LogInForm/LogInForm";
 import LogOut from "./components/LogOut/LogOut";
+import UserProfile from "./components/UserProfile/UserProfile"
 // import ParkShow from "./components/ParkShow/ParkShow"
 import ParkList from "./components/ParkList/ParkList"
+import HomeScreen from "./components/HomeScreen/HomeScreen"
 import './App.css';
 
 require('dotenv').config()
 
-const location = {
-  address: '180 Old Bass River Rd, South Dennis, massachusetts.',
-  lat: 41.68,
-  lng: -70.15,
-}
+// const location = {
+//   address: '180 Old Bass River Rd, South Dennis, massachusetts.',
+//   lat: 41.68,
+//   lng: -70.15,
+// }
 function App(props) {
   const [state, setState] = useState({
     username: "",
@@ -34,7 +36,7 @@ function App(props) {
       // const decodedToken = JSON.parse(atob(localStorage.token.split(".")[1]))
       setState({
         ...state,
-        name: localStorage.name,
+        username: localStorage.username,
         email: localStorage.email,
         // id: decodedToken.id,
       })
@@ -177,9 +179,37 @@ function App(props) {
             }}
           />
           <Route
+            path="/profile"
+            render={(props) => {
+              return (
+                <UserProfile
+                  isLoggedIn={isLoggedIn}
+                  handleInput={handleInput}
+                  handleLogIn={handleLogIn}
+                />
+              );
+            }}
+          />
+          <Route
+            path="/locations"
+            render={(props) => {
+              return (
+                <Map 
+                  isLoggedIn={isLoggedIn}
+                  handleInput={handleInput}
+                  handleLogIn={handleLogIn}
+                />
+              );
+            }}
+          />
+          <Route
             path="/"
             render={() => {
-              return <Map isLoggedIn={isLoggedIn} />;
+              return <HomeScreen 
+              isLoggedIn={isLoggedIn} 
+              handleInput={handleInput}
+              handleLogIn={handleLogIn}
+              />;
             }}
           />
 
