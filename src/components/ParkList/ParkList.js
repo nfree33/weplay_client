@@ -2,7 +2,7 @@ import axios from 'axios';
 import React, { useState, useEffect } from 'react';
 
 // import ParkShow from "./ParkShow/ParkShow"
-
+import "./ParkList.css";
 
 export default function ParkList(props) {
     const [parks, setParks] = useState([])
@@ -17,14 +17,16 @@ export default function ParkList(props) {
     }, [!parks]);
 
     const showParks = parks.map((park, i) => {
-        const { name, address, location, sports } = park
+        const { name, address, location, sports, img } = park
         return (
             <div key={i}>
                 <h1>{name}</h1>
+                <img className= "show-image" src={img}/>
                 <h1>Address: {address}</h1>
                 <h1>Latitude: {location.lat}</h1>
                 <h1>Longitude: {location.lng}</h1>
                 <h1>Sports: {sports}</h1>
+                <hr/>
             </div>
         );
     });

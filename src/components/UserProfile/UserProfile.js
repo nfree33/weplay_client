@@ -9,10 +9,11 @@ function UserProfile(props) {
         async function fetchData() {
             const response = await axios.get("http://localhost:3000/users");
             setUser(response.data);
+            console.log("===RESPONSE.DATA===", response.data)
         }
         fetchData();
     }, [!user]);
-    console.log("+++++++++++++++++++++", user)
+    console.log("++++++++++USER DATA+++++++++++", user)
     return (
       <div>
           <h1>User Profile</h1>

@@ -14,13 +14,13 @@ function NavBar(props) {
           </li>
         );
         navBarItems.push(
-          <li key={3}>
-            <a href="/profile">Profile</a>
+          <li key={4}>
+            <a href="/locations">Locations</a>
           </li>
         );
         navBarItems.push(
-          <li key={4}>
-            <a href="/locations">Locations</a>
+          <li key={3}>
+            <a href="/profile">Profile</a>
           </li>
         );
       navBarItems.push(
