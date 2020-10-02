@@ -27,7 +27,19 @@
 .App-link {
   color: #61dafb;
 }
-
+.card-image{
+  width: 30vh;
+}
+.card-list{
+  text-align: left;
+  font-size: 1.3rem;
+}
+.park-card{
+  background: ghostwhite;
+}
+.card-address{
+  text-align: left;
+}
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
