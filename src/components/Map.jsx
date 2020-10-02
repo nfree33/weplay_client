@@ -63,7 +63,8 @@ export default function Map() {
                   <div className="park-card">
                   <h1 className="card-address">{selected.name}</h1>
                   <h3 className="card-address">{selected.address}</h3>
-                  <img className="card-image" src={selected.img}/>
+                  <a href={`/parks/${selected.id}`}>
+                  <img className="card-image" src={selected.img}/></a>
                   <h3 className="card-list-header">Available Sports</h3>
                   <ul className= "card-list">
                     <li>{selected.sports[0]}</li>

@@ -17,14 +17,12 @@ export default function ParkList(props) {
     }, [!parks]);
 
     const showParks = parks.map((park, i) => {
-        const { name, address, location, sports, img } = park
+        const { id, name, address, location, sports, img } = park
         return (
             <div key={i}>
-                <h1>{name}</h1>
+                <h1><a href={`/parks/${id}`}>{name}</a></h1>
                 <img className= "show-image" src={img}/>
                 <h1>Address: {address}</h1>
-                <h1>Latitude: {location.lat}</h1>
-                <h1>Longitude: {location.lng}</h1>
                 <h1>Sports: {sports}</h1>
                 <hr/>
             </div>
@@ -34,37 +32,3 @@ export default function ParkList(props) {
     return <div>{showParks}</div>;
 };
 
-
-
-
-
-
-//     const getParks = async () => {
-//         try {
-//             const response = await axios.get('http://localhost:3000/parks')
-//             const data = await response.json()
-//             console.log(data)
-//             setParks(data)
-//         } catch (error) {
-//             console.error(error)
-//         }[]
-//     }
-//     useEffect(() => {
-//         (
-//             async function () {
-//                 await getParks()
-//             }
-//         )()
-//     }, [])
-
-//     const showParks = parks.map((park, i) => {
-//     return (
-//         <div key={i}>
-//             <h1>Parks</h1>
-//         <ParkShow park={park} isLoggedIn={props.isLoggedIn} />
-//       </div>
-//     );
-//     })   
-//     return <div>{showParks}</div>
-
-// }

@@ -13,11 +13,14 @@ function UserProfile(props) {
         }
         fetchData();
     }, [!user]);
+
     console.log("++++++++++USER DATA+++++++++++", user)
+
+    const { username, email } = user
     return (
       <div>
           <h1>User Profile</h1>
-          <h1>User: {props.username}</h1>
+          <h1>User: {user.username}</h1>
       </div>
     );
   }

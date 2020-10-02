@@ -12,6 +12,7 @@ import UserProfile from "./components/UserProfile/UserProfile"
 import ParkList from "./components/ParkList/ParkList"
 import HomeScreen from "./components/HomeScreen/HomeScreen"
 import './App.css';
+import ParkShow from "./components/ParkShow/ParkShow";
 
 require('dotenv').config()
 
@@ -100,13 +101,14 @@ function App(props) {
           password: state.password
         }
       });
-      console.log(state)
       localStorage.token = response.data.token;
       // localStorage.email = state.email;
       localStorage.username = state.username;
       localStorage.email = state.email;
       // decode the token, grab the id out of it:
       const decodedToken = JSON.parse(atob(response.data.token.split(".")[1]))
+      console.log("===DECODED TOKEN===", decodedToken)
+      console.log(state)
       setIsLoggedIn(true);
       setState({ ...state, id: decodedToken.id })
       // props.history.push('/');
@@ -155,6 +157,19 @@ function App(props) {
             }}
           />
           <Route
+            path="/parks/:id"
+            render={(props) => {
+              return (
+                <ParkShow
+                  isLoggedIn={isLoggedIn}
+                  handleInput={handleInput}
+                  handleLogIn={handleLogIn}
+                  user={state}
+                />
+              );
+            }}
+          />
+          <Route
             path="/parks"
             render={(props) => {
               return (
@@ -186,6 +201,7 @@ function App(props) {
                   isLoggedIn={isLoggedIn}
                   handleInput={handleInput}
                   handleLogIn={handleLogIn}
+                  user={state}
                 />
               );
             }}
@@ -194,7 +210,7 @@ function App(props) {
             path="/locations"
             render={(props) => {
               return (
-                <Map 
+                <Map
                   isLoggedIn={isLoggedIn}
                   handleInput={handleInput}
                   handleLogIn={handleLogIn}
@@ -205,10 +221,10 @@ function App(props) {
           <Route
             path="/"
             render={() => {
-              return <HomeScreen 
-              isLoggedIn={isLoggedIn} 
-              handleInput={handleInput}
-              handleLogIn={handleLogIn}
+              return <HomeScreen
+                isLoggedIn={isLoggedIn}
+                handleInput={handleInput}
+                handleLogIn={handleLogIn}
               />;
             }}
           />
