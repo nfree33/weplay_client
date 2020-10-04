@@ -82,7 +82,6 @@ function App(props) {
       // setState({ ...state, id: decodedToken.id })
       setState({ ...state })
       setIsLoggedIn(true);
-      props.history.push('/parks');
 
     } catch (err) {
       console.log(err);
@@ -104,14 +103,14 @@ function App(props) {
       localStorage.token = response.data.token;
       // localStorage.email = state.email;
       localStorage.username = state.username;
+      localStorage.password = state.password
       localStorage.email = state.email;
       // decode the token, grab the id out of it:
-      const decodedToken = JSON.parse(atob(response.data.token.split(".")[1]))
+      const decodedToken = response.data.token.split(".")
       console.log("===DECODED TOKEN===", decodedToken)
-      console.log(state)
+      console.log("===USER STATE===", state)
       setIsLoggedIn(true);
       setState({ ...state, id: decodedToken.id })
-      // props.history.push('/');
     } catch (error) {
       console.log(error);
       let userChoice;

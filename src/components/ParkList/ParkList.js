@@ -17,18 +17,35 @@ export default function ParkList(props) {
     }, [!parks]);
 
     const showParks = parks.map((park, i) => {
-        const { id, name, address, location, sports, img } = park
+        const { id, name, address, location, sports, img } = 
+        park
+        console.log(sports)
         return (
-            <div key={i}>
-                <h1><a href={`/parks/${id}`}>{name}</a></h1>
+            <div className="park-card card-margin park-preview" key={i}>
+                <h1 className="sport-font"><a className="sport-font"href={`/parks/${id}`}>{name}</a></h1>
                 <img className= "show-image" src={img}/>
-                <h1>Address: {address}</h1>
-                <h1>Sports: {sports}</h1>
-                <hr/>
+                <h3>Address: {address}</h3>
+                <ul className="sportList"> 
+                    <li className="sportList">{sports[0]} </li>
+                    <li className="sportList">{sports[1]} </li>
+                    <li className="sportList">{sports[2]}</li>
+                    </ul>
+                
+             
+                
+
+
+
+
+                
             </div>
         );
     });
 
-    return <div>{showParks}</div>;
+    return (<div>
+        {showParks}
+        
+        </div>
+    )
 };
 

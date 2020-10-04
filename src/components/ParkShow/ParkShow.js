@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import {useParams} from 'react-router-dom'
+import { useParams } from 'react-router-dom'
 import axios from 'axios'
 import "./ParkShow.css";
 
@@ -20,24 +20,46 @@ function ParkShow(props) {
         fetchData();
     }, [!park]);
 
+    const showUsersAssigned = users?.map((user, i) => {
+        const { username } = user;
+        return (
+            <div className="user-div" key={i}>
+                    <h2 className="users-added">{username}</h2>
+            </div>
+        );
+    });
+
+    const showSports= sports?.map((park, i) => {
+        const { sports } = park ;
+        return (
+            <div key={i}>
+               <ul>
+               <li>{sports}</li>
+               </ul>
+            </div>
+        );
+    });
+
+
+
     // const { username } = users
     console.log("===FETCH USER DATA", users)
+    console.log("==SHOW SPORTS===",showSports)
     return (
         <div className="park-preview">
-            <h1>{name}</h1>
-            <img className="park-image"    src={img}/>
-            <a href="/locations"><h2 className="see-on-map">See it on the map!</h2></a>
-            {props.isLoggedIn ? <h4>{address}</h4> : ""}
+            <h1 className="sport-font">{name}</h1>
+            <img className="park-image" src={img} />
+            {props.isLoggedIn ? <h3>{address}</h3> : ""}
+            {/* {props.isLoggedIn ? <h4>{sports}</h4> : ""}
             {props.isLoggedIn ? <h4>{sports}</h4> : ""}
-            {/* <h4>{users[0].username||"test"}</h4> */}
-            {/* <h4>{Object.keys(users) > 0 ? users[0].username : ''}</h4> */}
-            {/* {
-              park.map(item => {
-                return (
-                <h1>{item.users.username}</h1>
-                )
-              })
-            } */}
+            {props.isLoggedIn ? <h4>{sports}</h4> : ""}
+            {props.isLoggedIn ? <h4>{sports}</h4> : ""} */}
+
+            <h2>See who else wants to pickup here:</h2>
+            <div className="container">
+                <h3 className="user-has-park">{showUsersAssigned}</h3>
+            <a href="/locations"><h2 className="see-on-map">See it on the map!</h2></a>
+            </div>
         </div>
     );
 }

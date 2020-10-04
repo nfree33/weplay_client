@@ -4,10 +4,11 @@ import "./Navbar.css";
 function NavBar(props) {
     let navBarItems = [
        <li className="navbar-item" key={1}>
-        <a href="/">Home</a>
+        <a href="/">wePlay</a>
       </li>,
     ];
     if (props.isLoggedIn) {
+
       navBarItems.push(
            <li  key={2}>
             <a className="navbar-item" href="/parks">Parks</a>

@@ -4,3 +4,25 @@
     box-shadow: seagreen;
 }
 
+.sportList{
+    display: inline;
+    text-align: left;
+    font-size: 2rem;
+}
+.sport-font {
+    font-size: 5rem;
+    text-decoration: none;
+    font-family: "sporter";
+    color: green;
+}
+a{
+    text-decoration: none;
+}
+.park-card {
+    border-radius: 10px;
+	box-shadow: 10px 10px 5px rgba(0,0,0,0.2);
+}
+
+.card-margin{
+    margin: 100px;
+}

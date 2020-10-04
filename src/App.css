@@ -40,11 +40,15 @@
 .card-address{
   text-align: left;
 }
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.welcome-message{
+  width: 60%;
+  border-radius: 10px;
+  background-image: linear-gradient( rgba(65,195,125,0.8),rgba(65,195,25,0.4));
+  margin: 10px auto;
+  color: whitesmoke;
+  font-size: 3rem;
+  padding: 20px;
+}
+.welcome-body{
+  background: rgba(65,195,75,0.3);
 }
