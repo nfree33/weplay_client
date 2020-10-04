@@ -7,7 +7,8 @@
 .sportList{
     display: inline;
     text-align: left;
-    font-size: 2rem;
+    font-size: 3rem;
+    font-family: "sporter";
 }
 .sport-font {
     font-size: 5rem;
