@@ -7,7 +7,7 @@ function UserProfile(props) {
     useEffect(() => {
         // Need to wrap this in an async function to use await inside:
         async function fetchData() {
-            const response = await axios.get("http://weplay-api.herokuapp.com/users");
+            const response = await axios.get("https://weplay-api.herokuapp.com/users");
             setUser(response.data);
             console.log("===RESPONSE.DATA===", response.data)
         }

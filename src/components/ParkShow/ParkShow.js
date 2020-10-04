@@ -12,7 +12,7 @@ function ParkShow(props) {
     useEffect(() => {
         // Need to wrap this in an async function to use await inside:
         async function fetchData() {
-            const response = await axios.get(`http://weplay-api.herokuapp.com/parks/${params.id}`);
+            const response = await axios.get(`https://weplay-api.herokuapp.com/parks/${params.id}`);
             console.log("=====fetch park====", response)
             setPark(response.data);
             console.log(response.data)

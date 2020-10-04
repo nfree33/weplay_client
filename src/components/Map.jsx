@@ -10,7 +10,7 @@ export default function Map() {
   useEffect(() => {
     // Need to wrap this in an async function to use await inside:
     async function fetchData() {
-      const response = await axios.get("http://weplay-api.herokuapp.com/parks");
+      const response = await axios.get("https://weplay-api.herokuapp.com/parks");
       setParks(response.data);
     }
     fetchData();
