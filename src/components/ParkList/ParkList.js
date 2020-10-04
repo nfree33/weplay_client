@@ -26,9 +26,9 @@ export default function ParkList(props) {
                 <img className= "show-image" src={img}/>
                 <h3>Address: {address}</h3>
                 <ul className="sportList"> 
-                    <li className="sportList">{sports[0]} </li>
-                    <li className="sportList">{sports[1]} </li>
-                    <li className="sportList">{sports[2]}</li>
+                    <li className="sportList sport-font">{sports[0]} </li>
+                    <li className="sportList sport-font">{sports[1]} </li>
+                    <li className="sportList sport-font">{sports[2]}</li>
                     </ul>
             </div>
         );
