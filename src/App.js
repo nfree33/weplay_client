@@ -66,7 +66,7 @@ function App(props) {
   const handleSignUp = async (event) => {
     event.preventDefault();
     try {
-      const response = await axios.post("http://localhost:3000/users",
+      const response = await axios.post("http://weplay-api.herokuapp.com/users",
         {
           user: {
             email: state.email,
@@ -93,7 +93,7 @@ function App(props) {
   const handleLogIn = async (event) => {
     event.preventDefault();
     try {
-      const response = await axios.post("http://localhost:3000/users/login", {
+      const response = await axios.post("http://weplay-api.herokuapp.com/users/login", {
         user: {
           // email: state.email,
           username: state.username,

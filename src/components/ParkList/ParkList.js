@@ -10,7 +10,7 @@ export default function ParkList(props) {
     useEffect(() => {
         // Need to wrap this in an async function to use await inside:
         async function fetchData() {
-            const response = await axios.get("http://localhost:3000/parks");
+            const response = await axios.get("http://weplay-api.herokuapp.com/parks");
             setParks(response.data);
         }
         fetchData();
