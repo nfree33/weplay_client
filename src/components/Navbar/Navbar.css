@@ -1,12 +1,15 @@
+
+
 nav {
-    background: cornsilk;
-    padding: 0 2% 0 2%;
-    text-align: right;
+    background: green;
+    text-align: center;
+    color: whitesmoke;
+    justify-content: space-between;
   }
   
   nav a {
     text-decoration: none;
-    color: black;
+    color: whitesmoke;
     font-weight: 600;
     font-size: 20px;
   }
@@ -20,10 +23,12 @@ nav {
     display: inline-block;
     margin: 20px;
     width: 100px;
+    justify-content: space-around;
   }
   
   nav ul {
     margin: 0px;
+    justify-content: space-around;
   }
   
   h1 {
@@ -31,5 +36,5 @@ nav {
     margin: 20px 0px 20px 10px;
   }
   .navbar-item:hover {
-    box-shadow: 10px 10px 100px rgba(110,140,80,0.9);    
+    box-shadow: 10px 10px 50px rgba(110,140,80,0.9);    
   }

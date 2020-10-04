@@ -20,7 +20,7 @@ function UserProfile(props) {
     return (
       <div>
           <h1>User Profile</h1>
-          <h1>User: {user.username}</h1>
+          <h1>User: {username}</h1>
       </div>
     );
   }
