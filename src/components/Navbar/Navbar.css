@@ -39,5 +39,6 @@ nav {
     box-shadow: 10px 10px 50px rgba(110,140,80,0.9);    
   }
   .nav-font{
-    font-family: "sporter"
+    font-family: "sporter";
+    font-size: 2rem;
   }
