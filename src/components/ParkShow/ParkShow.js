@@ -41,8 +41,6 @@ function ParkShow(props) {
     });
 
 
-
-    // const { username } = users
     console.log("===FETCH USER DATA", users)
     console.log("==SHOW SPORTS===",showSports)
     return (
@@ -50,10 +48,7 @@ function ParkShow(props) {
             <h1 className="sport-font">{name}</h1>
             <img className="park-image" src={img} />
             {props.isLoggedIn ? <h3>{address}</h3> : ""}
-            {/* {props.isLoggedIn ? <h4>{sports}</h4> : ""}
-            {props.isLoggedIn ? <h4>{sports}</h4> : ""}
-            {props.isLoggedIn ? <h4>{sports}</h4> : ""}
-            {props.isLoggedIn ? <h4>{sports}</h4> : ""} */}
+
 
             <h2>See who else wants to pickup here:</h2>
             <div className="container">
