@@ -3,8 +3,8 @@ import "./Navbar.css";
 
 function NavBar(props) {
     let navBarItems = [
-       <li className="navbar-item nav-font" key={1}>
-        <a href="/">wePlay</a>
+       <li  key={1}>
+        <a className="navbar-item nav-font" href="/">wePlay</a>
       </li>,
     ];
     if (props.isLoggedIn) {
