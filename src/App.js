@@ -16,11 +16,7 @@ import ParkShow from "./components/ParkShow/ParkShow";
 
 require('dotenv').config()
 
-// const location = {
-//   address: '180 Old Bass River Rd, South Dennis, massachusetts.',
-//   lat: 41.68,
-//   lng: -70.15,
-// }
+
 function App(props) {
   const [state, setState] = useState({
     username: "",
@@ -120,7 +116,6 @@ function App(props) {
       }
       else if (userChoice === 'no') {
         alert(`Oh... Sign up then!`);
-        // props.history.push('/');
       }
     }
   };
